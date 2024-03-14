@@ -107,17 +107,20 @@
 								<div class="col-md-offset-1 col-md-2 col-sm-12">
 									<div class="single-model-search">
 										<h2>From:</h2>
-										<div class="model-select-icon">
-											<select class="form-control">
+										<div class="model-select-date">
+<!--											<select class="form-control">-->
 
-											  	<option value="default">year</option><!-- /.option-->
+													<input type="date" id="date_from" name="date_from" pattern="\d{1,2}/\d{1,2}/\d{4}" required>
 
-											  	<option value="2018">2018</option><!-- /.option-->
 
-											  	<option value="2017">2017</option><!-- /.option-->
-											  	<option value="2016">2016</option><!-- /.option-->
+<!--											  	<option value="default">year</option>&lt;!&ndash; /.option&ndash;&gt;-->
 
-											</select><!-- /.select-->
+<!--											  	<option value="2018">2018</option>&lt;!&ndash; /.option&ndash;&gt;-->
+
+<!--											  	<option value="2017">2017</option>&lt;!&ndash; /.option&ndash;&gt;-->
+<!--											  	<option value="2016">2016</option>&lt;!&ndash; /.option&ndash;&gt;-->
+
+<!--											</select>&lt;!&ndash; /.select&ndash;&gt;-->
 										</div><!-- /.model-select-icon -->
 									</div>
 									<div class="single-model-search">
@@ -154,23 +157,26 @@
 									</div>
 									<div class="single-model-search">
 										<h2>Date to:</h2>
-										<div class="model-select-icon">
-											<select class="form-control">
+										<div class="model-select-date">
+<!--											<select class="form-control">-->
 
-											  	<option value="default">condition</option><!-- /.option-->
+													<input type="date" id="date_to" name="date_to" pattern="\d{1,2}/\d{1,2}/\d{4}" required>
 
-											  	<option value="something">something</option><!-- /.option-->
 
-											  	<option value="something">something</option><!-- /.option-->
-											  	<option value="something">something</option><!-- /.option-->
+<!--											  	<option value="default">year</option>&lt;!&ndash; /.option&ndash;&gt;-->
 
-											</select><!-- /.select-->
+<!--											  	<option value="2018">2018</option>&lt;!&ndash; /.option&ndash;&gt;-->
+
+<!--											  	<option value="2017">2017</option>&lt;!&ndash; /.option&ndash;&gt;-->
+<!--											  	<option value="2016">2016</option>&lt;!&ndash; /.option&ndash;&gt;-->
+
+<!--											</select>&lt;!&ndash; /.select&ndash;&gt;-->
 										</div><!-- /.model-select-icon -->
 									</div>
 								</div>
 								<div class="col-md-offset-1 col-md-2 col-sm-12">
 									<div class="single-model-search">
-										<h2>Max days at destination:</h2>
+										<h2>Max days on site:</h2>
 										<div class="model-select-icon">
 											<select class="form-control">
 
@@ -200,7 +206,36 @@
 										</div><!-- /.model-select-icon -->
 									</div>
 								</div>
-								<div class="col-md-2 col-sm-12">
+								<div class="col-md-offset-1 col-md-2 col-sm-12">
+									<div class="single-model-search">
+										<h2>Max price for flight:</h2>
+										<div class="model-select-icon">
+											<select class="form-control">
+
+											  	<option value="default">make</option><!-- /.option-->
+
+											  	<option value="toyota">toyota</option><!-- /.option-->
+
+											  	<option value="holden">holden</option><!-- /.option-->
+											  	<option value="maecedes-benz">maecedes-benz.</option><!-- /.option-->
+
+											</select><!-- /.select-->
+										</div><!-- /.model-select-icon -->
+									</div>
+									<div class="single-model-search">
+										<h2>Accept Stopovers:</h2>
+										<div class="model-select-icon">
+											<select class="form-control">
+
+											  	<option value="default">Yes</option><!-- /.option-->
+
+											  	<option value="something">No</option><!-- /.option-->
+
+											</select><!-- /.select-->
+										</div><!-- /.model-select-icon -->
+									</div>
+								</div>
+								<div class="col-md-12 col-sm-12">
 									<div class="single-model-search text-center">
 										<button class="welcome-btn model-search-btn" onclick="window.location.href='#'">
 											search

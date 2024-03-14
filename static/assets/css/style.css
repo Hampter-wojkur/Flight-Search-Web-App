@@ -283,6 +283,17 @@ nav.navbar.bootsnav .navbar-toggle i{color: #4e4ffa;}
     text-transform: capitalize;
     margin-bottom: 20px;
 }
+
+/*model-select-date*/
+.model-select-date {
+    position: relative;
+    outline: 0!important;
+    box-shadow: none;
+    border: 1px solid #f8f8f8;
+    background: #f8f8f8;
+    height: 60px;
+    padding-top: 10px;
+}
 /*model-select-icon*/
 .model-select-icon{
     position:relative;
@@ -315,9 +326,11 @@ nav.navbar.bootsnav .navbar-toggle i{color: #4e4ffa;}
     pointer-events: none;
     border: transparent;
 }/*model-select-icon*/
+
+.model-
 .welcome-btn.model-search-btn {
     width: 160px;
-    margin-top: 80px;
+    margin-top: 25px;
     margin-left: 53px;
 }
 
