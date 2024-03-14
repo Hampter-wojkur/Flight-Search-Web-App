@@ -1,6 +1,5 @@
 import json
 import requests
-from sheety_data import DataManager
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 
