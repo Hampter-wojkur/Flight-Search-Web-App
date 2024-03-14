@@ -20,8 +20,9 @@ def single_deal():
     return render_template("index.html")
 
 
+@app.route("/newsletter")
 def subscription():
-    return render_template("subscription.html")
+    return render_template("newsletter.html")
 
 
 @app.route("/subscription/deals", methods=["POST"])
