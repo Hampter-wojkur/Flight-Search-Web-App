@@ -270,10 +270,11 @@ nav.navbar.bootsnav .navbar-toggle i{color: #4e4ffa;}
     /* position: absolute; */
     width: 100%;
     border-radius: 3px;
+    padding: 20px;
 }
 
 /*.single-model-search*/
-.single-model-search{margin-bottom: 30px;}
+.single-model-search{margin-bottom: 30px; padding-top: 10px;}
 .single-model-search:last-child {margin-bottom: 0;}
 
 .single-model-search h2 {
@@ -282,6 +283,32 @@ nav.navbar.bootsnav .navbar-toggle i{color: #4e4ffa;}
     text-transform: capitalize;
     margin-bottom: 20px;
 }
+
+/*model-select-date*/
+.model-select-date {
+    position: relative;
+    outline: 0!important;
+    box-shadow: none;
+    border: 1px solid #f8f8f8;
+    background: #f8f8f8;
+    color: black;
+    height: 60px;
+    padding-top: 10px;
+}
+
+/*model-input*/
+.model-input {
+    position: relative;
+    outline: 0!important;
+    box-shadow: none;
+    border: 1px solid #f8f8f8;
+    background: #f8f8f8;
+    color: black;
+    height: 60px;
+    padding-top: 10px;
+    margin-bottom: 30px;
+}
+
 /*model-select-icon*/
 .model-select-icon{
     position:relative;
@@ -292,10 +319,11 @@ nav.navbar.bootsnav .navbar-toggle i{color: #4e4ffa;}
     border: 1px solid #f8f8f8;
     background: #f8f8f8;
     height: 60px;
+    color: black
 }
 .model-select-icon select {
     font-size: 16px;
-    color: #888f9d;
+    color: black
     text-transform: capitalize;
 }
 .model-select-icon:after{
@@ -313,11 +341,12 @@ nav.navbar.bootsnav .navbar-toggle i{color: #4e4ffa;}
     font-family: "Flaticon";
     pointer-events: none;
     border: transparent;
+    color: black
 }/*model-select-icon*/
 .welcome-btn.model-search-btn {
     width: 160px;
-    margin-top: 80px;
-    margin-left: 53px;
+    margin-top: 0px;
+    margin-left: 0px;
 }
 
 /*.single-model-search*/
@@ -712,7 +741,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #4e4ffa;}
 }
 
 #form {
-    margin-top: 200px;
+    margin-top: 10px;
 }
 
 /*========================Thank you=================

@@ -1,6 +1,10 @@
-@media screen and (max-width:1680px){
-
+@media screen and (max-width:2100px){
+	.model-search-content {position: relative;bottom: 0;top: 180px;}
 }/*max-width:1680px*/
+
+@media screen and (max-width:1680px){
+	.model-search-content {position: relative;bottom: 0;top: 180px;}
+
 @media screen and (max-width:1440px){
 	.welcome-hero-txt {padding: 128px 0px 122px;}
 	.model-search-content {position: relative;bottom: 0;top: 130px;}
@@ -8,7 +12,7 @@
 
 @media screen and (max-width:1199px){
 	.welcome-hero-txt h2{font-size: 40px;}
-	.welcome-btn.model-search-btn {margin-left: 28px;}
+	.welcome-btn.model-search-btn {margin-left: 0px;}
 	.featured-cars-img {padding: 0 10px;}
 }/*max-width:1199px*/
 
