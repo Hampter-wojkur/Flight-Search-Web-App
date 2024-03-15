@@ -25,7 +25,7 @@ def subscription():
     return render_template("newsletter.html")
 
 
-@app.route("/subscription/deals", methods=["POST"])
+@app.route("/newsletter/deals", methods=["POST"])
 def subscription_deals():
 
     json_data = request.json
