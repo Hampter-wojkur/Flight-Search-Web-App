@@ -1,7 +1,52 @@
 import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react';
+
+
 
 function App() {
+
+  const [formData, setFormData] = useState({
+    city_from: "",
+    city_to: "",
+    date_from: "",
+    date_to: "",
+    max_days_at_destination: 0,
+    currency: "",
+    max_flight_prices: 0,
+    accept_stopovers: ""
+  });
+
+  const handleFormChange = (event) => {
+    const { name, value } = event.target;
+    console.log(`Field ${name} changed for: ${value}`);
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    fetch('http://127.0.0.1:5000/submit_form', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Odpowiedź z serwera:', data);
+        // Tutaj możesz dodać logikę obsługi odpowiedzi z serwera
+      })
+      .catch(error => {
+        console.error('Błąd podczas wysyłania żądania:', error);
+        // Tutaj możesz dodać logikę obsługi błędów
+      });
+  }
+
   return (
     <div>
         {/*[if lte IE 9]>
@@ -41,124 +86,126 @@ function App() {
             <div className="row">
               <div className="col-md-12">
                 <div className="model-search-content">
-                  <div className="row">
-                    <div className="col-md-offset-1 col-md-2 col-sm-12">
-                      <div className="single-model-search">
-                        <h2>City From:</h2>
-                        <div className="model-select-icon">
-                          <select className="form-control">
-                            <option value="default">year</option>{/* /.option*/}
-                            <option value={2018}>2018</option>{/* /.option*/}
-                            <option value={2017}>2017</option>{/* /.option*/}
-                            <option value={2016}>2016</option>{/* /.option*/}
-                          </select>{/* /.select*/}
-                        </div>{/* /.model-select-icon */}
-                      </div>
-                      <div className="single-model-search">
-                        <h2>Date From:</h2>
-                        <div className="model-select-date">
-                          {/*											<select class="form-control">*/}
-                          <input style={{padding: '6px 12px'}} type="date" id="date_from" name="date_from" pattern="\d{1,2}/\d{1,2}/\d{4}" required />
-                          {/*											  	<option value="default">year</option>&lt;!&ndash; /.option&ndash;&gt;*/}
-                          {/*											  	<option value="2018">2018</option>&lt;!&ndash; /.option&ndash;&gt;*/}
-                          {/*											  	<option value="2017">2017</option>&lt;!&ndash; /.option&ndash;&gt;*/}
-                          {/*											  	<option value="2016">2016</option>&lt;!&ndash; /.option&ndash;&gt;*/}
-                          {/*											</select>&lt;!&ndash; /.select&ndash;&gt;*/}
-                        </div>{/* /.model-select-icon */}
-                      </div>
-                    </div>
-                    <div className="col-md-offset-1 col-md-2 col-sm-12">
-                      <div className="single-model-search">
-                        <h2>City To:</h2>
-                        <div className="model-select-icon">
-                          <select className="form-control">
-                            <option value="default">make</option>{/* /.option*/}
-                            <option value="toyota">toyota</option>{/* /.option*/}
-                            <option value="holden">holden</option>{/* /.option*/}
-                            <option value="maecedes-benz">maecedes-benz.</option>{/* /.option*/}
-                          </select>{/* /.select*/}
-                        </div>{/* /.model-select-icon */}
-                      </div>
-                      <div className="single-model-search">
-                        <h2>Date to:</h2>
-                        <div className="model-select-date">
-                          {/*											<select class="form-control">*/}
-                          <input style={{padding: '6px 12px'}} type="date" id="date_to" name="date_to" pattern="\d{1,2}/\d{1,2}/\d{4}" required />
-                          {/*											  	<option value="default">year</option>&lt;!&ndash; /.option&ndash;&gt;*/}
-                          {/*											  	<option value="2018">2018</option>&lt;!&ndash; /.option&ndash;&gt;*/}
-                          {/*											  	<option value="2017">2017</option>&lt;!&ndash; /.option&ndash;&gt;*/}
-                          {/*											  	<option value="2016">2016</option>&lt;!&ndash; /.option&ndash;&gt;*/}
-                          {/*											</select>&lt;!&ndash; /.select&ndash;&gt;*/}
-                        </div>{/* /.model-select-icon */}
-                      </div>
-                    </div>
-                    <div className="col-md-offset-1 col-md-2 col-sm-12">
-                      <div className="single-model-search">
-                        <h2>Max Days on site:</h2>
-                        <div className="model-input">
-                          {/*											<select class="form-control">*/}
-                          <input type="number" id="max_days_at_destination" name="max_days_at_destination" step={1} min={1} />
-                          {/*											  	<option value="default">make</option>&lt;!&ndash; /.option&ndash;&gt;*/}
-                          {/*											  	<option value="toyota">toyota</option>&lt;!&ndash; /.option&ndash;&gt;*/}
-                          {/*											  	<option value="holden">holden</option>&lt;!&ndash; /.option&ndash;&gt;*/}
-                          {/*											  	<option value="maecedes-benz">maecedes-benz.</option>&lt;!&ndash; /.option&ndash;&gt;*/}
-                          {/*											</select>&lt;!&ndash; /.select&ndash;&gt;*/}
-                          {/*										</div>&lt;!&ndash; /.model-select-icon &ndash;&gt;*/}
-                        </div>
-                      </div>
-                      <div className="single-model-search">
-                        <h2>Currency:</h2>
-                        <div className="model-select-icon">
-                          <select className="form-control">
-                            <option value="EUR">EUR</option>{/* /.option*/}
-                            <option value="PLN">PLN</option>{/* /.option*/}
-                            <option value="USD">USD</option>{/* /.option*/}
-                            <option value="GBP">GBP</option>{/* /.option*/}
-                            <option value="JPY">JPY </option>{/* /.option*/}
-                          </select>{/* /.select*/}
-                        </div>{/* /.model-select-icon */}
-                      </div>
-                    </div>
-                    <div className="col-md-offset-1 col-md-2 col-sm-12">
-                      <div className="single-model-search">
-                        <h2>Max price for flight:</h2>
-                        {/*										<div class="model-select-icon">*/}
-                        <div className="model-input">
-                          {/*											<select class="form-control">*/}
-                          <input type="number" id="max_flight_prices" name="max_flight_prices" step={10} min={10} />
-                          {/*											  	<option value="default">make</option>&lt;!&ndash; /.option&ndash;&gt;*/}
-                          {/*											  	<option value="toyota">toyota</option>&lt;!&ndash; /.option&ndash;&gt;*/}
-                          {/*											  	<option value="holden">holden</option>&lt;!&ndash; /.option&ndash;&gt;*/}
-                          {/*											  	<option value="maecedes-benz">maecedes-benz.</option>&lt;!&ndash; /.option&ndash;&gt;*/}
-                          {/*											</select>&lt;!&ndash; /.select&ndash;&gt;*/}
-                          {/*										</div>&lt;!&ndash; /.model-select-icon &ndash;&gt;*/}
+                  <form onSubmit={handleSubmit}>
+                    <div className="row">
+                      <div className="col-md-offset-1 col-md-2 col-sm-12">
+                        <div className="single-model-search">
+                          <h2>City From:</h2>
+                          <div className="model-select-icon">
+                            <select className="form-control" name='city_from' onChange={handleFormChange} required>
+                              <option value="default">year</option>{/* /.option*/}
+                              <option value={2018}>2018</option>{/* /.option*/}
+                              <option value={2017}>2017</option>{/* /.option*/}
+                              <option value={2016}>2016</option>{/* /.option*/}
+                            </select>{/* /.select*/}
+                          </div>{/* /.model-select-icon */}
                         </div>
                         <div className="single-model-search">
-                          <h2>Accept Stopover:</h2>
+                          <h2>Date From:</h2>
+                          <div className="model-select-date">
+                            {/*											<select class="form-control">*/}
+                            <input style={{padding: '6px 12px'}} type="date" id="date_from" name="date_from" pattern="\d{1,2}/\d{1,2}/\d{4}" onChange={handleFormChange} required />
+                            {/*											  	<option value="default">year</option>&lt;!&ndash; /.option&ndash;&gt;*/}
+                            {/*											  	<option value="2018">2018</option>&lt;!&ndash; /.option&ndash;&gt;*/}
+                            {/*											  	<option value="2017">2017</option>&lt;!&ndash; /.option&ndash;&gt;*/}
+                            {/*											  	<option value="2016">2016</option>&lt;!&ndash; /.option&ndash;&gt;*/}
+                            {/*											</select>&lt;!&ndash; /.select&ndash;&gt;*/}
+                          </div>{/* /.model-select-icon */}
+                        </div>
+                      </div>
+                      <div className="col-md-offset-1 col-md-2 col-sm-12">
+                        <div className="single-model-search">
+                          <h2>City To:</h2>
                           <div className="model-select-icon">
-                            <select className="form-control">
-                              <option value="default">Yes</option>{/* /.option*/}
-                              <option value="something">No</option>{/* /.option*/}
+                            <select className="form-control" name='city_to' onChange={handleFormChange} required>
+                              <option value="default">make</option>{/* /.option*/}
+                              <option value="toyota">toyota</option>{/* /.option*/}
+                              <option value="holden">holden</option>{/* /.option*/}
+                              <option value="maecedes-benz">maecedes-benz.</option>{/* /.option*/}
+                            </select>{/* /.select*/}
+                          </div>{/* /.model-select-icon */}
+                        </div>
+                        <div className="single-model-search">
+                          <h2>Date to:</h2>
+                          <div className="model-select-date">
+                            {/*											<select class="form-control">*/}
+                            <input style={{padding: '6px 12px'}} type="date" id="date_to" name="date_to" pattern="\d{1,2}/\d{1,2}/\d{4}" onChange={handleFormChange} required />
+                            {/*											  	<option value="default">year</option>&lt;!&ndash; /.option&ndash;&gt;*/}
+                            {/*											  	<option value="2018">2018</option>&lt;!&ndash; /.option&ndash;&gt;*/}
+                            {/*											  	<option value="2017">2017</option>&lt;!&ndash; /.option&ndash;&gt;*/}
+                            {/*											  	<option value="2016">2016</option>&lt;!&ndash; /.option&ndash;&gt;*/}
+                            {/*											</select>&lt;!&ndash; /.select&ndash;&gt;*/}
+                          </div>{/* /.model-select-icon */}
+                        </div>
+                      </div>
+                      <div className="col-md-offset-1 col-md-2 col-sm-12">
+                        <div className="single-model-search">
+                          <h2>Max Days on site:</h2>
+                          <div className="model-input">
+                            {/*											<select class="form-control">*/}
+                            <input type="number" id="max_days_at_destination" name="max_days_at_destination" step={1} min={1}  onChange={handleFormChange} required />
+                            {/*											  	<option value="default">make</option>&lt;!&ndash; /.option&ndash;&gt;*/}
+                            {/*											  	<option value="toyota">toyota</option>&lt;!&ndash; /.option&ndash;&gt;*/}
+                            {/*											  	<option value="holden">holden</option>&lt;!&ndash; /.option&ndash;&gt;*/}
+                            {/*											  	<option value="maecedes-benz">maecedes-benz.</option>&lt;!&ndash; /.option&ndash;&gt;*/}
+                            {/*											</select>&lt;!&ndash; /.select&ndash;&gt;*/}
+                            {/*										</div>&lt;!&ndash; /.model-select-icon &ndash;&gt;*/}
+                          </div>
+                        </div>
+                        <div className="single-model-search">
+                          <h2>Currency:</h2>
+                          <div className="model-select-icon">
+                            <select className="form-control" name='currency' onChange={handleFormChange} required>
+                              <option value="EUR">EUR</option>{/* /.option*/}
+                              <option value="PLN">PLN</option>{/* /.option*/}
+                              <option value="USD">USD</option>{/* /.option*/}
+                              <option value="GBP">GBP</option>{/* /.option*/}
+                              <option value="JPY">JPY </option>{/* /.option*/}
                             </select>{/* /.select*/}
                           </div>{/* /.model-select-icon */}
                         </div>
                       </div>
-                      {/*								<div class="col-md-12 col-sm-12">*/}
-                      {/*									<div class="single-model-search text-center">*/}
-                      {/*										<button class="welcome-btn model-search-btn" onclick="window.location.href='#'">*/}
-                      {/*											search*/}
-                      {/*										</button>*/}
-                      {/*									</div>*/}
-                      {/*								</div>*/}
-                    </div>
-                    <div className="col-md-12 col-sm-12">
-                      <div className="single-model-search text-center">
-                        <button className="welcome-btn model-search-btn" onclick="window.location.href='#'">
-                          search
-                        </button>
+                      <div className="col-md-offset-1 col-md-2 col-sm-12">
+                        <div className="single-model-search">
+                          <h2>Max price for flight:</h2>
+                          {/*										<div class="model-select-icon">*/}
+                          <div className="model-input">
+                            {/*											<select class="form-control">*/}
+                            <input type="number" id="max_flight_prices" name="max_flight_prices" step={10} min={10} onChange={handleFormChange} required />
+                            {/*											  	<option value="default">make</option>&lt;!&ndash; /.option&ndash;&gt;*/}
+                            {/*											  	<option value="toyota">toyota</option>&lt;!&ndash; /.option&ndash;&gt;*/}
+                            {/*											  	<option value="holden">holden</option>&lt;!&ndash; /.option&ndash;&gt;*/}
+                            {/*											  	<option value="maecedes-benz">maecedes-benz.</option>&lt;!&ndash; /.option&ndash;&gt;*/}
+                            {/*											</select>&lt;!&ndash; /.select&ndash;&gt;*/}
+                            {/*										</div>&lt;!&ndash; /.model-select-icon &ndash;&gt;*/}
+                          </div>
+                          <div className="single-model-search">
+                            <h2>Accept Stopover:</h2>
+                            <div className="model-select-icon">
+                              <select className="form-control" name="accept_stopovers" onChange={handleFormChange} required>
+                                <option value="true">Yes</option>{/* /.option*/}
+                                <option value="false">No</option>{/* /.option*/}
+                              </select>{/* /.select*/}
+                            </div>{/* /.model-select-icon */}
+                          </div>
+                        </div>
+                        {/*								<div class="col-md-12 col-sm-12">*/}
+                        {/*									<div class="single-model-search text-center">*/}
+                        {/*										<button class="welcome-btn model-search-btn" onclick="window.location.href='#'">*/}
+                        {/*											search*/}
+                        {/*										</button>*/}
+                        {/*									</div>*/}
+                        {/*								</div>*/}
+                      </div>
+                      <div className="col-md-12 col-sm-12">
+                        <div className="single-model-search text-center">
+                          <button className="welcome-btn model-search-btn" type='submit' >
+                            search
+                          </button>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </form>
                 </div>
               </div>
             </div>
@@ -168,7 +215,7 @@ function App() {
                 <p>
                   Choose cities, dates and currency to search!
                 </p>
-                <button className="welcome-btn" onclick="window.location.href='#'">Get a subscription!</button>
+                <button className="welcome-btn">Get a subscription!</button>
               </div>
             </div>
           </div></section>{/*/.welcome-hero*/}
@@ -210,7 +257,7 @@ function App() {
           </div>{/*/.container*/}
           <div id="scroll-Top">
             <div className="return-to-top">
-              <i className="fa fa-angle-up " id="scroll-top" data-toggle="tooltip" data-placement="top" title data-original-title="Back to Top" aria-hidden="true" />
+              <i className="fa fa-angle-up " id="scroll-top" data-toggle="tooltip" data-placement="top"  data-original-title="Back to Top" aria-hidden="true" />
             </div>
           </div>{/*/.scroll-Top*/}
         </footer>{/*/.contact*/}

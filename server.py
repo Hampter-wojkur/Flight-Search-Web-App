@@ -1,12 +1,29 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, Response, jsonify, render_template, request, redirect, url_for
+from flask_cors import CORS
 from flight_data import FlightData
 
 app = Flask(__name__)
+CORS(app)
 
 
-@app.route("/")
+@app.route("/", methods=["POST"])
 def render_home_page():
-    return render_template("start.html")
+    if request.method == "POST":
+        form_data = request.form.to_dict()
+        print(f"Form data: {form_data}")
+
+
+
+
+@app.route("/submit_form", methods=["POST", "OPTIONS"])
+def submit_form():
+    if request.method == "POST":
+        form_data = request.json 
+        print(f"Form data: {form_data}")
+        return Response('{"Message":"PUT Request accept"}', status=200, mimetype='application/json')
+    
+    return Response('{"option":"ok"}', status=200,  mimetype='application/json')
+
 
 
 @app.route("/deal", methods=["POST"])

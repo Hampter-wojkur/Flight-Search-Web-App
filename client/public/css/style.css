@@ -323,7 +323,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #4e4ffa;}
 }
 .model-select-icon select {
     font-size: 16px;
-    color: black
+    color: black;
     text-transform: capitalize;
 }
 .model-select-icon:after{
