@@ -1,5 +1,6 @@
 from flask import Flask, Response, jsonify, render_template, request, redirect, url_for
 from flask_cors import CORS
+
 from flight_data import FlightData
 
 app = Flask(__name__)

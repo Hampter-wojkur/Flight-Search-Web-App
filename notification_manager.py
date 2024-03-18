@@ -17,7 +17,8 @@ class NotificationManager:
             stopover_info = ""
         else:
             stopover_info = "Flight has 1 stop over, via " + flights_dict["stepover_city"] + "-" + flights_dict["stepover_IATA"]
-
+        
+        #Define users
         for user in users["users"]:
             with smtplib.SMTP("smtp.gmail.com") as connection:
                 connection.starttls()
