@@ -20,6 +20,8 @@ def submit_form():
     if request.method == "POST":
         form_data = request.json 
         print(f"Form data: {form_data}")
+        
+
         return Response('{"Message":"PUT Request accept"}', status=200, mimetype='application/json')
     
     return Response('{"option":"ok"}', status=200,  mimetype='application/json')

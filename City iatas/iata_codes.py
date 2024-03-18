@@ -4,13 +4,12 @@ import json
 
 iata_city_codes = {}
 i = 0
-with open('airports.json', 'r') as file:
+with open('iata_city_codes_raw.json', 'r') as file:
     data = json.load(file)
-    for airport_code, airport_info in data.items():
-        if airport_info["iata"] != "":
-            iata_code = airport_info["iata"]
-            city = airport_info["city"]
-            iata_city_codes[city] = iata_code
+    for element in data:
+        city = element["name_translations"]["en"]
+        iata_code = element["code"]
+        iata_city_codes[city] = iata_code
 
 print(iata_city_codes)
 print(len(iata_city_codes))

@@ -156,7 +156,7 @@ function App() {
                           <h2>Currency:</h2>
                           <div className="model-select-icon">
                             <select className="form-control" name='currency' onChange={handleFormChange} required>
-                              <option value="EUR">EUR</option>{/* /.option*/}
+                              <option defaultValue="EUR">EUR</option>{/* /.option*/}
                               <option value="PLN">PLN</option>{/* /.option*/}
                               <option value="USD">USD</option>{/* /.option*/}
                               <option value="GBP">GBP</option>{/* /.option*/}
@@ -183,8 +183,8 @@ function App() {
                             <h2>Accept Stopover:</h2>
                             <div className="model-select-icon">
                               <select className="form-control" name="accept_stopovers" onChange={handleFormChange} required>
-                                <option value="true">Yes</option>{/* /.option*/}
-                                <option value="false">No</option>{/* /.option*/}
+                                <option defaultValue={true}>Yes</option>{/* /.option*/}
+                                <option value={false}>No</option>{/* /.option*/}
                               </select>{/* /.select*/}
                             </div>{/* /.model-select-icon */}
                           </div>
