@@ -12,9 +12,9 @@ function App() {
     date_from: "",
     date_to: "",
     max_days_at_destination: 0,
-    currency: "",
+    currency: "EUR",
     max_flight_prices: 0,
-    accept_stopovers: ""
+    accept_stopovers: true
   });
 
   const handleFormChange = (event) => {
@@ -157,8 +157,8 @@ function App() {
                         <div className="single-model-search">
                           <h2>Currency:</h2>
                           <div className="model-select-icon">
-                            <select className="form-control" name='currency' onChange={handleFormChange} required>
-                              <option defaultValue="EUR">EUR</option>{/* /.option*/}
+                            <select className="form-control" name='currency' onChange={handleFormChange}>
+                              <option value="EUR">EUR</option>{/* /.option*/}
                               <option value="PLN">PLN</option>{/* /.option*/}
                               <option value="USD">USD</option>{/* /.option*/}
                               <option value="GBP">GBP</option>{/* /.option*/}
@@ -173,7 +173,7 @@ function App() {
                           {/*										<div class="model-select-icon">*/}
                           <div className="model-input">
                             {/*											<select class="form-control">*/}
-                            <input type="number" id="max_flight_prices" name="max_flight_prices" step={10} min={10} onChange={handleFormChange} required />
+                            <input type="number" id="max_flight_prices" name="max_flight_prices" min={10} onChange={handleFormChange} required />
                             {/*											  	<option value="default">make</option>&lt;!&ndash; /.option&ndash;&gt;*/}
                             {/*											  	<option value="toyota">toyota</option>&lt;!&ndash; /.option&ndash;&gt;*/}
                             {/*											  	<option value="holden">holden</option>&lt;!&ndash; /.option&ndash;&gt;*/}
@@ -184,8 +184,8 @@ function App() {
                           <div className="single-model-search">
                             <h2>Accept Stopover:</h2>
                             <div className="model-select-icon">
-                              <select className="form-control" name="accept_stopovers" onChange={handleFormChange} required>
-                                <option defaultValue={true}>Yes</option>{/* /.option*/}
+                              <select className="form-control" name="accept_stopovers" onChange={handleFormChange}>
+                                <option value={true}>Yes</option>{/* /.option*/}
                                 <option value={false}>No</option>{/* /.option*/}
                               </select>{/* /.select*/}
                             </div>{/* /.model-select-icon */}
