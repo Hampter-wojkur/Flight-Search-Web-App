@@ -91,13 +91,14 @@ function App() {
                       <div className="col-md-offset-1 col-md-2 col-sm-12">
                         <div className="single-model-search">
                           <h2>City From:</h2>
-                          <div className="model-select-icon">
-                            <select className="form-control" name='city_from' onChange={handleFormChange} required>
+                          <div className="model-input">
+                            {/* <select className="form-control" name='city_from' onChange={handleFormChange} required>
                               <option value="default">year</option>{/* /.option*/}
-                              <option value={2018}>2018</option>{/* /.option*/}
-                              <option value={2017}>2017</option>{/* /.option*/}
-                              <option value={2016}>2016</option>{/* /.option*/}
-                            </select>{/* /.select*/}
+                              {/* <option value={2018}>2018</option>{/* /.option*/}
+                              {/* <option value={2017}>2017</option>/.option */}
+                              {/* <option value={2016}>2016</option>/.option */} 
+                               <input className='form-control' name='city_from' onChange={handleFormChange} required/>
+                            {/* </select>/.select */}
                           </div>{/* /.model-select-icon */}
                         </div>
                         <div className="single-model-search">
@@ -116,13 +117,14 @@ function App() {
                       <div className="col-md-offset-1 col-md-2 col-sm-12">
                         <div className="single-model-search">
                           <h2>City To:</h2>
-                          <div className="model-select-icon">
-                            <select className="form-control" name='city_to' onChange={handleFormChange} required>
-                              <option value="default">make</option>{/* /.option*/}
-                              <option value="toyota">toyota</option>{/* /.option*/}
-                              <option value="holden">holden</option>{/* /.option*/}
-                              <option value="maecedes-benz">maecedes-benz.</option>{/* /.option*/}
-                            </select>{/* /.select*/}
+                          <div className="model-input">
+                            {/* <select className="form-control" name='city_to' onChange={handleFormChange} required> */}
+                              {/* <option value="default">make</option>/.option */}
+                              {/* <option value="toyota">toyota</option>/.option */}
+                              {/* <option value="holden">holden</option>/.option */}
+                              {/* <option value="maecedes-benz">maecedes-benz.</option>/.option */}
+                            {/* </select>/.select */}
+                            <input className='form-control' name='city_to' onChange={handleFormChange} required/>
                           </div>{/* /.model-select-icon */}
                         </div>
                         <div className="single-model-search">

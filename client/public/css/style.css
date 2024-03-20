@@ -289,8 +289,8 @@ nav.navbar.bootsnav .navbar-toggle i{color: #4e4ffa;}
     position: relative;
     outline: 0!important;
     box-shadow: none;
-    border: 1px solid #f8f8f8;
-    background: #f8f8f8;
+    /* border: 1px solid #f8f8f8;
+    background: #f8f8f8; */
     color: black;
     height: 60px;
     padding-top: 10px;
@@ -301,8 +301,8 @@ nav.navbar.bootsnav .navbar-toggle i{color: #4e4ffa;}
     position: relative;
     outline: 0!important;
     box-shadow: none;
-    border: 1px solid #f8f8f8;
-    background: #f8f8f8;
+    /* border: 1px solid #f8f8f8; */
+    /* background: #f8f8f8; */
     color: black;
     height: 60px;
     padding-top: 10px;
