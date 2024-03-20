@@ -1,5 +1,4 @@
 Flask
 flask-cors
-json 
 requests
 selenium
