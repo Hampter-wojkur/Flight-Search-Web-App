@@ -27,10 +27,12 @@ function App() {
   };
 
   const setCityCode = (code,where)=>{
+    const arr = [];
+    arr.push(code)
     setFormData(prevState=>{
       return {
         ...prevState,
-        [where]: code
+        [where]: arr
       }
     }); 
   };
