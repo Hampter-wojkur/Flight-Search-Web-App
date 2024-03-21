@@ -14,7 +14,7 @@ function App() {
     max_days_at_destination: 0,
     currency: "EUR",
     max_flight_prices: 0,
-    accept_stopovers: true
+    accept_stopovers: true, 
   });
 
   const handleFormChange = (event) => {
