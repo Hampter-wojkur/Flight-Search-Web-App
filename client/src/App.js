@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import React, { useState } from 'react';
-import ComboBox from "./components/ComboBox";
+import ComboBox from "./components/ComboBox/ComboBox";
 import data from "./data/iata_codes.json";
 
 function App() { 
@@ -273,6 +273,5 @@ function App() {
       </div>
     );
   }
-
 
 export default App;
