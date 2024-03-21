@@ -1,5 +1,6 @@
 from flask import Flask, Response, jsonify, render_template, request, redirect, url_for
 from flask_cors import CORS
+from convert_data import convert_data_format
 
 from flight_data import FlightData
 
@@ -20,7 +21,8 @@ CORS(app)
 def submit_form():
     if request.method == "POST":
         form_data = request.json 
-        print(f"Form data: {form_data}")
+        converted_data = convert_data_format(form_data)
+        print(converted_data)
         
 
         return Response('{"Message":"PUT Request accept"}', status=200, mimetype='application/json')
