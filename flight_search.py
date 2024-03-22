@@ -18,8 +18,8 @@ class FlightSearch:
         self.date_to = data["date_to"]
         self.max_days = int(data["max_days_at_destination"])
         # Place data
-        self.departures = data["departures"]
-        self.destinations = data["arrivals"]
+        self.departures = data["city_from"]
+        self.destinations = data["city_to"]
         # Price data
         self.max_prices = data["max_flight_prices"]
         self.currency = data["currency"]
