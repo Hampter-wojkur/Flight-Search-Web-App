@@ -14,7 +14,7 @@ function App() {
     max_days_at_destination: 0,
     currency: "EUR",
     max_flight_prices: 0,
-    accept_stopovers: true, 
+    accept_stopovers: "true", 
   });
 
   const handleFormChange = (event) => {
@@ -36,6 +36,7 @@ function App() {
       }
     }); 
   };
+  
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -173,7 +174,7 @@ function App() {
                           {/*										<div class="model-select-icon">*/}
                           <div className="model-input">
                             {/*											<select class="form-control">*/}
-                            <input type="number" id="max_flight_prices" name="max_flight_prices" min={10} onChange={handleFormChange} required />
+                            <input type="number" id="max_flight_prices" name="max_flight_prices" min={10} step="0.01" onChange={handleFormChange} required />
                             {/*											  	<option value="default">make</option>&lt;!&ndash; /.option&ndash;&gt;*/}
                             {/*											  	<option value="toyota">toyota</option>&lt;!&ndash; /.option&ndash;&gt;*/}
                             {/*											  	<option value="holden">holden</option>&lt;!&ndash; /.option&ndash;&gt;*/}
@@ -241,18 +242,9 @@ function App() {
             <div className="footer-copyright">
               <div className="row">
                 <div className="col-sm-6">
-                  <p>
-                    © copyright.designed and developed by <a href="https://www.themesine.com/">themesine</a>.
-                  </p>{/*/p*/}
+
                 </div>
                 <div className="col-sm-6">
-                  <div className="footer-social">
-                    <a href="#"><i className="fa fa-facebook" /></a>	
-                    <a href="#"><i className="fa fa-instagram" /></a>
-                    <a href="#"><i className="fa fa-linkedin" /></a>
-                    <a href="#"><i className="fa fa-pinterest-p" /></a>
-                    <a href="#"><i className="fa fa-behance" /></a>	
-                  </div>
                 </div>
               </div>
             </div>{/*/.footer-copyright*/}

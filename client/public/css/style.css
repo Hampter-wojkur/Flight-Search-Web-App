@@ -223,7 +223,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #4e4ffa;}
 .header-area{position: absolute;top:0;left:0;width: 100%;z-index: 99;}
 
 /*.welcome-hero-txt*/
-.welcome-hero-txt{text-align: center;padding:290px 0 372px;}
+.welcome-hero-txt{text-align: center;padding:290px 0 32px;}
 .welcome-hero-txt h2 {
     font-size: 42px;
     color: #fff;
