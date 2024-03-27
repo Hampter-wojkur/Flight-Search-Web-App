@@ -1,2 +1,2 @@
 # Flight-Search-Web-App
-Web Application for finding cheapest flights, according to your own criteria. Made with Python 3.9 and Flask framework, communicated with external Kiwi API.
+Web Application for finding cheapest flights, based on user-defined criteria. Made with Python 3.12 backend in Flask and frontend in React.js integrated with external [Tequilla API](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwj6kNT7jJSFAxXwcvEDHXhJArcQFnoECA8QAQ&url=https%3A%2F%2Ftequila.kiwi.com%2F&usg=AOvVaw0cgCMmCdXi_Q61rVhtC__G&opi=89978449).
