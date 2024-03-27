@@ -50,11 +50,11 @@ function App() {
     })
       .then(response => response.json())
       .then(data => {
-        console.log('Odpowiedź z serwera:', data);
+        console.log('Server response:', data);
         // Tutaj możesz dodać logikę obsługi odpowiedzi z serwera
       })
       .catch(error => {
-        console.error('Błąd podczas wysyłania żądania:', error);
+        console.error('Error while sending a request:', error);
         // Tutaj możesz dodać logikę obsługi błędów
       });
   }
@@ -174,7 +174,7 @@ function App() {
                           {/*										<div class="model-select-icon">*/}
                           <div className="model-input">
                             {/*											<select class="form-control">*/}
-                            <input type="number" id="max_flight_prices" name="max_flight_prices" min={10} step="0.01" onChange={handleFormChange} required />
+                            <input type="number" id="max_flight_prices" name="max_flight_prices" min={10} step="1" onChange={handleFormChange} required />
                             {/*											  	<option value="default">make</option>&lt;!&ndash; /.option&ndash;&gt;*/}
                             {/*											  	<option value="toyota">toyota</option>&lt;!&ndash; /.option&ndash;&gt;*/}
                             {/*											  	<option value="holden">holden</option>&lt;!&ndash; /.option&ndash;&gt;*/}
