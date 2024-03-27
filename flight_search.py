@@ -58,6 +58,7 @@ class FlightSearch:
 
             respond = requests.get(url=self.flight_url, headers=flight_header, params=body)
             data = respond.json()
+            # print(data)
             json_respond = json.dumps(respond.json())
             # print(data)
             # print(json_respond)

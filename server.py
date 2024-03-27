@@ -20,6 +20,7 @@ CORS(app)
 def submit_form():
     if request.method == "POST":
         form_data = request.json 
+        # print(f"Form data: {form_data}")
         converted_data = convert_data_format(form_data)
         # print(converted_data)
         flights = FlightData(converted_data)
