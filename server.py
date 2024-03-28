@@ -1,7 +1,9 @@
+import json
 from flask import Flask, Response, jsonify, render_template, request, redirect, url_for
 from flask_cors import CORS
 from convert_data import convert_data_format
 from flight_data import FlightData
+from notification_manager import NotificationManager
 
 app = Flask(__name__)
 CORS(app)
@@ -23,11 +25,16 @@ def submit_form():
         # print(f"Form data: {form_data}")
         converted_data = convert_data_format(form_data)
         # print(converted_data)
-        flights = FlightData(converted_data)
-        print(flights)
-        
+        flight = FlightData(converted_data).find_best_fly()[0]
+        message = NotificationManager().return_single_flight(flight)
+        print(message)
 
-        return Response('{"Message":"PUT Request accept"}', status=200, mimetype='application/json')
+        response_data = {
+            "Status": "PUT Request accept",
+            "Message": message
+        }
+
+        return Response(json.dumps(response_data), status=200, mimetype='application/json')
     
     return Response('{"option":"ok"}', status=200,  mimetype='application/json')
 

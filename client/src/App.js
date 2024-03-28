@@ -51,7 +51,10 @@ function App() {
       .then(response => response.json())
       .then(data => {
         console.log('Server response:', data);
-        // Tutaj możesz dodać logikę obsługi odpowiedzi z serwera
+        console.log("Message from api:", data.Message)
+
+        document.getElementById('serverResponse').innerText = data.Message;
+
       })
       .catch(error => {
         console.error('Error while sending a request:', error);
@@ -146,7 +149,7 @@ function App() {
                           <h2>Max Days on site:</h2>
                           <div className="model-input">
                             {/*											<select class="form-control">*/}
-                            <input type="number" id="max_days_at_destination" name="max_days_at_destination" step={1} min={1}  onChange={handleFormChange} required />
+                            <input type="number" id="max_days_at_destination" name="max_days_at_destination" step={1} min={2}  onChange={handleFormChange} required />
                             {/*											  	<option value="default">make</option>&lt;!&ndash; /.option&ndash;&gt;*/}
                             {/*											  	<option value="toyota">toyota</option>&lt;!&ndash; /.option&ndash;&gt;*/}
                             {/*											  	<option value="holden">holden</option>&lt;!&ndash; /.option&ndash;&gt;*/}
@@ -214,7 +217,8 @@ function App() {
             </div>
             <div className="container">
               <div className="welcome-hero-txt">
-                <h2>get your desired flight in resonable price</h2>
+                <div id="serverResponse" className="animated fadeInUp"></div>
+                <h2>get your desired flight in reasonable price</h2>
                 <p>
                   Choose cities, dates and currency to search!
                 </p>
