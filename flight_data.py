@@ -16,6 +16,7 @@ class FlightData:
             if flight is not None and flight["has_airport_change"] is False:
                 dep_city = flight["cityFrom"]
                 dest_city = flight["cityTo"]
+                currency = list(flight["conversion"].keys())[0]
 
                 if len(flight["route"]) > 2:
                     stepover_city = flight["route"][1]["cityFrom"]
@@ -42,7 +43,8 @@ class FlightData:
                     "dep_date": dep_date,
                     "back_date": back_date,
                     "stepover_city": stepover_city,
-                    "stepover_IATA": stepover_city_IATA
+                    "stepover_IATA": stepover_city_IATA,
+                    "currency": currency
                 }
 
                 flights.append(dict)
