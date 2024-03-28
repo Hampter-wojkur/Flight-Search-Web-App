@@ -1,12 +1,16 @@
 @media screen and (max-width:2100px){
 	.model-search-content {position: relative;bottom: 0;top: 180px;}
+	.welcome-hero-txt{
+		padding-top: 32px;
+		margin-top: 200px;
+	}
 }/*max-width:1680px*/
 
 @media screen and (max-width:1680px){
 	.model-search-content {position: relative;bottom: 0;top: 180px;}
 
 @media screen and (max-width:1440px){
-	.welcome-hero-txt {padding: 128px 0px 122px;}
+	.welcome-hero-txt {padding: 10px 0px 122px;}
 	.model-search-content {position: relative;bottom: 0;top: 130px;}
 }/*max-width:1440px*/
 

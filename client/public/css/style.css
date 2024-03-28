@@ -240,6 +240,18 @@ nav.navbar.bootsnav .navbar-toggle i{color: #4e4ffa;}
     max-width: 735px;
     margin: 0 auto;
 }
+
+#serverResponse {
+    font-size: 22px;
+    /* text-transform: initial; */
+    color: #f5f5f5;
+    font-weight: 500;
+    border: 1px solid #ccc!important;
+    padding: 0.01em 16px;
+    border-radius: 16px;
+    background-color: #505963;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 .welcome-btn {
     display: inline-block;
     width: 230px;
