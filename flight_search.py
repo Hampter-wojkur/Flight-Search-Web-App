@@ -58,7 +58,7 @@ class FlightSearch:
 
             respond = requests.get(url=self.flight_url, headers=flight_header, params=body)
             data = respond.json()
-            # print(data)
+            print(data)
             json_respond = json.dumps(respond.json())
             # print(data)
             # print(json_respond)
@@ -71,7 +71,7 @@ class FlightSearch:
 
                 if self.accept_stopover is True:
 
-                    body["max_stopovers"] = 2
+                    body["max_stopovers"] = 1
                     respond2 = requests.get(url=self.flight_url, headers=flight_header, params=body)
                     data2 = respond2.json()
 
