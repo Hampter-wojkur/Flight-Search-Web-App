@@ -44,12 +44,15 @@ class FlightData:
                     "back_date": back_date,
                     "stepover_city": stepover_city,
                     "stepover_IATA": stepover_city_IATA,
-                    "currency": currency
+                    "currency": currency,
+                    "deep_link": flight["deep_link"]
                 }
 
                 flights.append(dict)
             else:
                 flights.append(None)
 
-        # print(flights)
+        print(flights)
+        if flights == []:
+            flights.append(None)
         return flights

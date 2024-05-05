@@ -52,8 +52,19 @@ function App() {
       .then(data => {
         console.log('Server response:', data);
         console.log("Message from api:", data.Message)
+        console.log("Link", data.Link);
 
-        document.getElementById('serverResponse').innerText = data.Message;
+        const serverResponseElement = document.getElementById('serverResponse');
+        serverResponseElement.innerText = data.Message;
+        
+        if (data.Link) {
+        const linkElement = document.createElement('a');
+          linkElement.style.color = 'white';
+          linkElement.style.textDecoration = 'underline';
+          linkElement.href = data.Link;
+          linkElement.textContent = 'Book your flight!';
+          serverResponseElement.appendChild(linkElement);
+        }
 
       })
       .catch(error => {

@@ -24,14 +24,16 @@ def submit_form():
         form_data = request.json 
         # print(f"Form data: {form_data}")
         converted_data = convert_data_format(form_data)
-        # print(converted_data)
+        print(converted_data)
         flight = FlightData(converted_data).find_best_fly()[0]
         message = NotificationManager().return_single_flight(flight)
+        link = NotificationManager().return_link(flight)
         print(message)
 
         response_data = {
             "Status": "PUT Request accept",
-            "Message": message
+            "Message": message,
+            "Link": link
         }
 
         return Response(json.dumps(response_data), status=200, mimetype='application/json')

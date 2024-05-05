@@ -15,11 +15,15 @@ class NotificationManager:
             else:
                 stopover_info = "Flight has 1 stop over, via " + flight_dict["stepover_city"] + "-" + flight_dict["stepover_IATA"]
         
-            return f'We found a flight for you! Only {flight_dict["lowest_price"]} {flight_dict["currency"]} to fly from {flight_dict["dep_city"]}-{flight_dict["dep_IATA"]} to {flight_dict["dest_city"]}-{flight_dict["dest_IATA"]}, from {flight_dict["dep_date"]} to {flight_dict["back_date"]}.\n {stopover_info}'
+            return f'We found a flight for you! Only {flight_dict["lowest_price"]} {flight_dict["currency"]} to fly from {flight_dict["dep_city"]}-{flight_dict["dep_IATA"]} to {flight_dict["dest_city"]}-{flight_dict["dest_IATA"]}, from {flight_dict["dep_date"]} to {flight_dict["back_date"]}. \n {stopover_info} '
         else:
             return "Sorry we couldn't find any flights with this requirements. Please change your filters."
             
-
+    def return_link(self, flight_dict):
+        if flight_dict:
+            return flight_dict["deep_link"]
+        else:
+            return ""
         
 
     def send_emails(self, flights_dict):
