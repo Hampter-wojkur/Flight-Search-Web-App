@@ -6,7 +6,7 @@ Web Application for finding cheapest flights, based on user-defined criteria. Ma
 
 #  Exercises
 
-// chart!
+![chart](https://raw.githubusercontent.com/Hampter-wojkur/Flight-Search-Web-App/exercises/screenshots/chart.png)
 
 ## Exercise 1
 Create Sample flask app with `POST` method which will return some kind of message in `JSON` format. 
@@ -20,9 +20,9 @@ Create Frontend React app with Button. Add event handler to it and change state.
 `npx create-react-app exercise2`
 Expected output will be someting like that:
 Before:
-!screenshot before clicking button 
+![before](https://raw.githubusercontent.com/Hampter-wojkur/Flight-Search-Web-App/exercises/screenshots/before.png)
 After:
-!screenshot after clicking button
+![after](https://raw.githubusercontent.com/Hampter-wojkur/Flight-Search-Web-App/exercises/screenshots/after.png)
 ## Exercise 3
 Connect frontend and backend by sending request after clicking button. 
 Receive message from backend and change actual state. 
