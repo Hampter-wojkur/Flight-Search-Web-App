@@ -16,9 +16,12 @@ Install dependencies by:
 You can run app by: 
 `python3 server.py`
 ## Exercise 2
-Create Frontend React app with Button. Add event handler to it and change state. Display current state value before and after clicking button. You can easily create React app with: 
+Create Frontend React app with Button. 
+Add event handler to it and change state. 
+Display current state value before and after clicking button. 
+You can easily create React app with: 
 `npx create-react-app exercise2`
-Expected output will be someting like that:
+Expected output will be someting like that:</br>
 Before:
 ![before](https://raw.githubusercontent.com/Hampter-wojkur/Flight-Search-Web-App/exercises/screenshots/before.png)
 After:
