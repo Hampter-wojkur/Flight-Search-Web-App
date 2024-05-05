@@ -1,6 +1,7 @@
 .autocomplete-wrapper {
     position: relative;
     width: 250px;
+    z-index: 3;
   }
   
   .suggestions-list {
