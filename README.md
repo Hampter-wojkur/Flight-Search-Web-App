@@ -29,9 +29,13 @@ You can easily create React app with: </br>
 `npx create-react-app exercise2`</br>
 
 Expected output will be someting like that:</br>
-Before:
+
+## **Before:**
+
 ![before](https://raw.githubusercontent.com/Hampter-wojkur/Flight-Search-Web-App/exercises/screenshots/before.png)</br>
-After:
+
+## **After:**
+
 ![after](https://raw.githubusercontent.com/Hampter-wojkur/Flight-Search-Web-App/exercises/screenshots/after.png)
 ## Exercise 3
 
