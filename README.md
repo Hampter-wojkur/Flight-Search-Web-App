@@ -9,26 +9,26 @@ Web Application for finding cheapest flights, based on user-defined criteria. Ma
 ![chart](https://raw.githubusercontent.com/Hampter-wojkur/Flight-Search-Web-App/exercises/screenshots/chart.png)
 
 ## Exercise 1
-Create Sample flask app with `POST` method which will return some kind of message in `JSON` format. 
-To test it we recommend [Thunder Client](https://www.thunderclient.com/) to install it as a vscode extension. 
-Install dependencies by: 
-`pip install -r requirements.txt`
-You can run app by: 
+Create Sample flask app with `POST` method which will return some kind of message in `JSON` format.</br>
+To test it we recommend [Thunder Client](https://www.thunderclient.com/) to install it as a vscode extension. </br>
+Install dependencies by: </br>
+`pip install -r requirements.txt`</br>
+You can run app by: </br>
 `python3 server.py`
 ## Exercise 2
-Create Frontend React app with Button. 
-Add event handler to it and change state. 
-Display current state value before and after clicking button. 
-You can easily create React app with: 
-`npx create-react-app exercise2`
+Create Frontend React app with Button. </br>
+Add event handler to it and change state. </br>
+Display current state value before and after clicking button. </br>
+You can easily create React app with: </br>
+`npx create-react-app exercise2`</br>
 Expected output will be someting like that:</br>
 Before:
-![before](https://raw.githubusercontent.com/Hampter-wojkur/Flight-Search-Web-App/exercises/screenshots/before.png)
+![before](https://raw.githubusercontent.com/Hampter-wojkur/Flight-Search-Web-App/exercises/screenshots/before.png)</br>
 After:
 ![after](https://raw.githubusercontent.com/Hampter-wojkur/Flight-Search-Web-App/exercises/screenshots/after.png)
 ## Exercise 3
-Connect frontend and backend by sending request after clicking button. 
-Receive message from backend and change actual state. 
-Display message which backend sent to You, as a updated state. 
-You can access your backend url by:
+Connect frontend and backend by sending request after clicking button. </br>
+Receive message from backend and change actual state. </br>
+Display message which backend sent to You, as a updated state. </br>
+You can access your backend url by:</br>
 `http://localhost:<PORT_IN_YOUR_FLASKAPP>`
