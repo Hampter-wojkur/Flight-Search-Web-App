@@ -3,6 +3,8 @@ import './App.css';
 import React, { useState } from 'react';
 import ComboBox from "./components/ComboBox";
 import data from "./data/iata_codes.json";
+import ReactLoading from "react-loading";
+import { ReactDOM } from 'react';
 
 function App() { 
 
@@ -15,7 +17,9 @@ function App() {
     currency: "EUR",
     max_flight_prices: 0,
     accept_stopovers: "true", 
-  });
+  }); 
+
+  const [submit,setSubmit] = useState(false)
 
   const handleFormChange = (event) => {
     const { name, value } = event.target;
@@ -40,7 +44,7 @@ function App() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
+    setSubmit(true);
     fetch('http://127.0.0.1:5000/submit_form', {
       method: 'POST',
       headers: {
@@ -56,7 +60,7 @@ function App() {
 
         const serverResponseElement = document.getElementById('serverResponse');
         serverResponseElement.innerText = data.Message;
-        
+        setSubmit(false);
         if (data.Link) {
         const linkElement = document.createElement('a');
           linkElement.style.color = 'white';
@@ -229,6 +233,11 @@ function App() {
             <div className="container">
               <div className="welcome-hero-txt">
                 <div id="serverResponse" className="animated fadeInUp"></div>
+                <div style={{width: "100%",margin: 'auto',justifyContent: 'center',textAlign: 'center',display: 'flex'}}>
+                {
+                  submit ? <ReactLoading type='spinningBubbles' color='#fffff'/> : null
+                }
+                </div>
                 <h2>get your desired flight in reasonable price</h2>
                 <p>
                   Choose cities, dates and currency to search!
